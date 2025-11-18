@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nova+Mono&family=Patrick+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root {
+	--nav-text: #fff;
+	--text: #333;
+	--muted-text: #aaa;
+	--primary: #c4170c;
+	--background: #f9f9f9;
+	--background-variant: #ddd;
+	--background-nav-variant: #a7140a;
+}
+
+.darkmode {
+	--nav-text: #fff;
+	--text: #f9f9f9;
+	--muted-text: #aaa;
+	--primary: #c4170c;
+	--background: #121212;
+	--background-variant: #282828;
+	--background-nav-variant: #a7140a;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: var(--background);
+}
+
+main {
+	width: 80%;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+h3 {
+	color: var(--text);
+	font-size: 3rem;
+	margin: 20px 0;
+}
+
+ion-icon {
+	display: inline-block;
+}
+
+#Politica, #Esportes, #Internacional, #Brasil, #News {
+	margin: 100px 0;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.Nav-Links {
+	background-color: var(--primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+}
+
+.Nav-Links h1 {
+	color: var(--nav-text);
+}
+
+.Nav-Links-List {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.Nav-Links-List li a {
+	color: var(--nav-text);
+	margin: 0 10px;
+	font-weight: 700;
+	transition: .1s ease-in-out;
+}
+
+.Nav-Links-List li a:hover {
+	border-bottom: 3px solid var(--nav-text);
+}
+
+.Nav-Division {
+	display: flex;
+	border-left: 3px solid var(--nav-text);
+	padding: 0px 20px;
+	align-items: center;
+}
+
+.Nav-Division a {
+	background-color: var(--background-nav-variant);
+	color: var(--nav-text);
+	font-weight: 700;
+	padding: 5px 10px;
+	margin: 0 20px;
+	border-radius: 5%;
+}
+
+.Nav-Division i {
+	transition: .2s ease-in-out;
+}
+
+.Nav-Division a:hover i {
+	transform: translateX(3px);
+}
+
+#Theme-Switch {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: var(--background-nav-variant);
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+
+#Theme-Switch ion-icon {
+	fill: var(--nav-text);
+	font-size: 20px;
+}
+
+#Theme-Switch ion-icon:last-child {
+	display: none;
+}
+
+.darkmode #Theme-Switch ion-icon:first-child {
+	display: none;
+}
+
+.darkmode #Theme-Switch ion-icon:last-child {
+	display: block;
+}
+
+#Theme-Switch:hover {
+	background-color: var(--background-nav-variant);
+}
+
+.News-Container, .Brasil-Container, .Internacional-Container, .Esportes-Container, .Politica-Container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: minmax(180px, auto);
+	gap: 20px;
+	align-items: stretch;
+}
+
+.News-Container {
+	grid-template-areas: "News-1 News-1 News-2" "News-1 News-1 News-3" "News-4 News-5 News-6";
+}
+
+[style*="News-1"] {
+	grid-row: span 2;
+	grid-column: span 2;
+}
+
+.Brasil-Container {
+	grid-template-areas: "Brasil-1 Brasil-2 Brasil-3" "Brasil-4 Brasil-4 Brasil-5" "Brasil-4 Brasil-4 Brasil-6";
+}
+
+[style*="Brasil-4"] {
+	grid-row: span 2;
+	grid-column: span 2;
+}
+
+.Internacional-Container {
+	grid-template-areas: "Internacional-2 Internacional-3 Internacional-1" "Internacional-4 Internacional-5 Internacional-1" "Internacional-6 Internacional-7 Internacional-1";
+}
+
+[style*="Internacional-1"] {
+	grid-row: span 3;
+}
+
+.Esportes-Container {
+	grid-template-areas: "Esportes-1 Esportes-1 Esportes-2" "Esportes-3 Esportes-4 Esportes-5" "Esportes-6 Esportes-6 Esportes-5";
+}
+
+[style*="Esportes-1"] {
+	grid-column: span 2;
+}
+
+[style*="Esportes-5"] {
+	grid-row: span 2;
+}
+
+[style*="Esportes-6"] {
+	grid-column: span 2;
+}
+
+.Politica-Container {
+	grid-template-areas: "Politica-1 Politica-2 Politica-3" "Politica-4 Politica-5 Politica-3" "Politica-6 Politica-7 Politica-7";
+}
+
+[style*="Politica-3"] {
+	grid-row: span 2;
+}
+
+[style*="Politica-7"] {
+	grid-column: span 2;
+}
+
+.News {
+	background-color: var(--background-variant);
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+	transition: transform .2s, box-shadow .2s;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.News:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+
+.News a {
+	display: flex;
+	flex-direction: column;
+	color: inherit;
+	flex-grow: 1;
+}
+
+.News img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	flex-shrink: 0;
+}
+
+[style*="span 2"] img, [style*="span 3"] img {
+	height: 250px;
+}
+
+.News .news-info {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.News a h4 {
+	color: var(--primary);
+	font-size: 1.1rem;
+	margin: 0 0 8px 0;
+	line-height: 1.3;
+}
+
+.News a:hover h4 {
+	text-decoration: underline;
+}
+
+.News a p {
+	color: var(--text);
+	font-size: .9rem;
+	line-height: 1.4;
+	margin-bottom: 10px;
+	flex-grow: 1;
+	min-height: 4.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.News .source {
+	display: block;
+	font-size: .8rem;
+	color: var(--muted-text);
+	font-weight: 500;
+	margin-top: auto;
+	padding-top: 5px;
+	border-top: 1px solid rgba(0, 0, 0, .05);
+}
+
+footer {
+	background-color: var(--primary);
+	color: var(--nav-text);
+	padding: 20px;
+}
+
+footer a {
+	color: var(--nav-text);
+}
+
+.Footer-Upper-Container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0 auto;
+	padding: 0 20px 30px;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.Logo-Left-Container {
+	display: flex;
+	flex-direction: column;
+}
+
+.Footer-Logo {
+	padding: 0px 0px 10px 0;
+}
+
+.Footer-Logo a {
+	font-size: 1.8rem;
+	font-weight: bold;
+	width: fit-content;
+}
+
+.Footer-Social-links {
+	border-top: 2px solid white;
+	padding: 10px 0px 20px 0;
+	display: flex;
+	gap: 20px;
+}
+
+.Footer-Social-links a {
+	font-size: 1.5rem;
+	transition: color .3s;
+}
+
+.Local {
+	width: 33%;
+	text-align: right;
+	line-height: 1.6;
+	font-size: .9rem;
+}
+
+footer>p {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 1rem;
+}
