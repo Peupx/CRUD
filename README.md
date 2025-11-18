@@ -75,5 +75,5 @@ Certifique-se de que está na pasta correta antes de fazer isso.
 
 Ao iniciar, você deve ver algo semelhante no terminal:
 
-✅ Conectado ao MySQL com o ID: [ID do thread] `<br>`
+✅ Conectado ao MySQL com o ID: [ID do thread] <br>
 Servidor rodando em [http://localhost:3000](http://localhost:3000)
