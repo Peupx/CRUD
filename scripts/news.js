@@ -1,4 +1,4 @@
-const API_KEY = "SUA CHAVE API";
+const API_KEY = "";
 
 function displaySection(articles, containerSelector, newsDivClass = 'News') {
     const container = document.querySelector(containerSelector);
@@ -41,7 +41,7 @@ function displaySection(articles, containerSelector, newsDivClass = 'News') {
 }
 
 
-function fetchNews(query, containerSelector, language = '') {
+function fetchNews(query, containerSelector, language = 'en') {
     const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&sortBy=publishedAt&apiKey=${API_KEY}${language ? '&language=' + language : ''}`;
     
     return fetch(url)
