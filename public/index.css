@@ -151,16 +151,20 @@ header {
 	background-color: var(--background-nav-variant);
 }
 
-.News-Container, .Brasil-Container, .Internacional-Container, .Esportes-Container, .Politica-Container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-auto-rows: minmax(180px, auto);
-	gap: 20px;
-	align-items: stretch;
+.News-Container, .Brasil-Container, .Internacional-Container, 
+.Esportes-Container, .Politica-Container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Coluna da esquerda maior para destaque */
+    grid-auto-rows: minmax(150px, auto);
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .News-Container {
-	grid-template-areas: "News-1 News-1 News-2" "News-1 News-1 News-3" "News-4 News-5 News-6";
+    grid-template-areas: 
+        "News-1 News-1 News-2" 
+        "News-1 News-1 News-3" 
+        "News-4 News-5 News-6";
 }
 
 [style*="News-1"] {
@@ -169,7 +173,11 @@ header {
 }
 
 .Brasil-Container {
-	grid-template-areas: "Brasil-1 Brasil-2 Brasil-3" "Brasil-4 Brasil-4 Brasil-5" "Brasil-4 Brasil-4 Brasil-6";
+    grid-template-columns: 1fr 2fr 1fr; /* Destaque no meio */
+    grid-template-areas: 
+        "Brasil-1 Brasil-4 Brasil-4"
+        "Brasil-2 Brasil-4 Brasil-4"
+        "Brasil-3 Brasil-5 Brasil-6";
 }
 
 [style*="Brasil-4"] {
@@ -178,7 +186,11 @@ header {
 }
 
 .Internacional-Container {
-	grid-template-areas: "Internacional-2 Internacional-3 Internacional-1" "Internacional-4 Internacional-5 Internacional-1" "Internacional-6 Internacional-7 Internacional-1";
+    grid-template-columns: 1fr 1fr 1.5fr; 
+    grid-template-areas: 
+        "Internacional-1 Internacional-2 Internacional-3"
+        "Internacional-4 Internacional-5 Internacional-5"
+        "Internacional-7 Internacional-7 Internacional-6";
 }
 
 [style*="Internacional-1"] {
@@ -186,7 +198,11 @@ header {
 }
 
 .Esportes-Container {
-	grid-template-areas: "Esportes-1 Esportes-1 Esportes-2" "Esportes-3 Esportes-4 Esportes-5" "Esportes-6 Esportes-6 Esportes-5";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "Esportes-1 Esportes-1 Esportes-2"
+        "Esportes-3 Esportes-4 Esportes-5"
+        "Esportes-6 Esportes-6 Esportes-5";
 }
 
 [style*="Esportes-1"] {
@@ -202,7 +218,10 @@ header {
 }
 
 .Politica-Container {
-	grid-template-areas: "Politica-1 Politica-2 Politica-3" "Politica-4 Politica-5 Politica-3" "Politica-6 Politica-7 Politica-7";
+	grid-template-areas: 
+	"Politica-1 Politica-3 Politica-3" 
+	"Politica-2 Politica-4 Politica-5" 
+	"Politica-6 Politica-7 Politica-7";
 }
 
 [style*="Politica-3"] {
@@ -231,18 +250,17 @@ header {
 
 .News a {
 	display: flex;
-	flex-direction: column;
-	color: inherit;
-	flex-grow: 1;
+    flex-direction: column;
+    height: 100%; /* Adicione isso */
+    flex-grow: 1;
 }
 
 .News img {
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	flex-shrink: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém a proporção sem fixar pixels */
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 [style*="span 2"] img, [style*="span 3"] img {
@@ -250,9 +268,9 @@ header {
 }
 
 .News .news-info {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
+    flex: 1; /* Faz a área de texto crescer e ocupar o espaço vazio */
+    display: flex;
+    flex-direction: column;
 }
 
 .News a h4 {
@@ -276,7 +294,9 @@ header {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: auto; /* Remova o min-height fixo para evitar buracos */
 }
 
 .News .source {
