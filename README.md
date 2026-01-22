@@ -1,10 +1,10 @@
-# 🚀 Guia de Instalação e Execução
+#  Guia de Instalação e Execução
 
 Este guia rápido explica como configurar e executar a aplicação web desenvolvida com **Node.js**, **Express** e **MySQL**.
 
 ---
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 Certifique-se de ter instalado:
 
@@ -13,7 +13,7 @@ Certifique-se de ter instalado:
 
 ---
 
-## 📦 Instalação dos Pacotes Node.js
+##  Instalação dos Pacotes Node.js
 
 No diretório raiz do projeto, execute:
 
@@ -27,7 +27,7 @@ Para instalar os pacotes necessários para rodar a aplicação digite no mesmo t
  npm install express mysql2 body-parser
 ```
 
-## ⚙️ Configuração do Banco de Dados MySQL e API
+##  Configuração do Banco de Dados MySQL e API
 
 A aplicação depende de uma conexão funcional com o MySQL.
 
@@ -59,11 +59,11 @@ Antes de executar a aplicação pegue sua chave no site [https://newsapi.org](ht
 const API_KEY = "SUA CHAVE API";
 ```
 
-## ▶️ Execução da Aplicação
+##  Execução da Aplicação
 
 Após instalar os pacotes e configurar o banco de dados, inicie o servidor Node.js.
 
-### 🔧 Iniciar o servidor
+###  Iniciar o servidor
 
 ```bash
 node processar_form.js
@@ -71,9 +71,9 @@ node processar_form.js
 
 Certifique-se de que está na pasta correta antes de fazer isso.
 
-## 📜 Verificação do log
+##  Verificação do log
 
 Ao iniciar, você deve ver algo semelhante no terminal:
 
-✅ Conectado ao MySQL com o ID: [ID do thread] <br>
+ Conectado ao MySQL com o ID: [ID do thread] <br>
 Servidor rodando em [http://localhost:3000](http://localhost:3000)
